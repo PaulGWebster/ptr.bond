@@ -1,6 +1,5 @@
 # Never include docker compose or .env files
 /docker-compose.override.yml
-/docker-compose.yml
 /.env
 # VScode server files
 /.vscode
