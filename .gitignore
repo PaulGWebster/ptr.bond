@@ -3,5 +3,5 @@
 /.env
 # VScode server files
 /.vscode
-# Carton local folder
-/local
+# Carton local inside a first level subdirectory
+*/local
