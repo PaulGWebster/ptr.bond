@@ -50,4 +50,23 @@ I will expect this list to grow as the project progresses.
   * Decide that the images are to large to stick in the flow of text and convert them into standard clickable links
   * Re-commit (ac678f0)
 * Correct what has been written so far and add appropriate capitalisation
+  * Commit (875bc4b)
+* Create a new project/repository on github [github - ptr.bond](https://github.com/PaulGWebster/ptr.bond)
+  * Add a remote to the currently local only git repository and make the first push.
+    * git remote add origin git@github.com:PaulGWebster/ptr.bond.git
+    * git branch -M master
+    * git push -u origin master
+```
+paul.webster@PAUL-PC-RGB:~/personal/ptr.bond$ git push -u origin master
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (13/13), 711.78 KiB | 5.79 MiB/s, done.
+Total 13 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), done.
+To github.com:PaulGWebster/ptr.bond.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+```
 * 
