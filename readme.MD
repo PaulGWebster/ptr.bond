@@ -73,4 +73,5 @@ Branch 'master' set up to track remote branch 'master' from 'origin'.
 ```
 
 * Adjusted order of some of the blog to work better with markdown.
-  * commit ()
+  * commit (983f60e)
+* Cast an eye at [Mojolicious - Tutorial](https://docs.mojolicious.org/Mojolicious/Guides/Tutorial)
