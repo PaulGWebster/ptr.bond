@@ -35,17 +35,19 @@ I will expect this list to grow as the project progresses.
 
 * Start VSCode, connect to debian/WSL2 instance.
 * Choose folder ~/
-* mkdir -p personal/ptr.bond
-* cd personal/ptr.bond
-* git init
-* echo "WriteMe" > readme.MD
-* open folder ~/personal/ptr.bond
-* open readme.md in vscode and begin writing
-* mkdir -p assets/blog
-* take a picture of the enviroment so far 
+* Create a folder for the project: mkdir -p personal/ptr.bond
+* Swap to it: cd personal/ptr.bond
+* Init a blank git repository: git init
+* Create a basic readme: echo "WriteMe" > readme.MD
+* In VSCode open the folder ~/personal/ptr.bond
+* Open readme.md in vscode and begin writing
+* Create a place for assets for the blog(From VSCode 'terminal'): mkdir -p assets/blog
+* Take a picture of the enviroment so far 
   * [step1-1](assets/blog/step1-1.png "step1-1")
-* take a picture showing the integration of linux and windows via WSL2, take note of the linux icon in the bottom left of the explorer window which allows direct access to the linux file system for copying files to and from it.
+* Take a picture showing the integration of linux and windows via WSL2, take note of the linux icon in the bottom left of the explorer window which allows direct access to the linux file system for copying files to and from it.
   * [step1-2](assets/blog/step1-2.png "step1-2")
 * Commit changes 988e73c
   * Decide that the images are to large to stick in the flow of text and convert them into standard clickable links
-  * re-commit 
+  * Re-commit (ac678f0)
+* Correct what has been written so far and add appropriate capitalisation
+* 
