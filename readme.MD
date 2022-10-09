@@ -74,4 +74,70 @@ Branch 'master' set up to track remote branch 'master' from 'origin'.
 
 * Adjusted order of some of the blog to work better with markdown.
   * commit (983f60e)
+* Change to the module directory: cd Author-Daemon-Site-Ptr-Bond
 * Cast an eye at [Mojolicious - Tutorial](https://docs.mojolicious.org/Mojolicious/Guides/Tutorial)
+  * Run cpanm Mojolicious::Lite, noting the version installed 
+    * Fetching http://www.cpan.org/authors/id/S/SR/SRI/Mojolicious-9.27.tar.gz ... OK 
+    * so, 9.27
+  * Add: Mojolicious::Lite to cpanfile 
+    * echo "requires 'Mojolicious::Lite','9.27'" >> cpanfile
+* Remember that I forgot to configure .gitignore
+  * Change to the root of the repository: cd ..
+  * Create .gitignore with the following contents(Well my selection at least):
+```
+# Never include
+# docker compose or .env files
+/docker-compose.override.yml
+/docker-compose.yml
+/.env
+# VScode server files
+/.vscode
+# Carton local folder
+/local
+```
+* Commit the gitignore
+  * git add .gitignore && git commit -m "Initial gitignore" (23074dc)
+* Question why I am ignoring docker-compose.yml (that's what you get when you copy paste from another project without reading it)
+  * Remove docker-compose.yml from the .gitignore and commit (21c9dbc)
+* gitignore now reads:
+```
+# Never include
+# docker compose or .env files
+/docker-compose.override.yml
+/.env
+# VScode server files
+/.vscode
+# Carton local folder
+/local
+```
+* Now back to cpanfile, mojolicious and carton
+  * cd Author-Daemon-Site-Ptr-Bond
+* Before we initilize carton, let us commit our cpanfile (and for me some corrections to this file)
+  * git commit -am "Add cpanfile to module and more corrections for readme.md" (0a2f0b7)
+  * Note: -am means 'all' no need to use 'add' I checked what this would do with 'git status' first, generally this is bad practice.
+* Now let us initilize carton
+```
+paul.webster@PAUL-PC-RGB:~/personal/ptr.bond/Author-Daemon-Site-Ptr-Bond$ carton install
+Installing modules using /home/paul.webster/personal/ptr.bond/Author-Daemon-Site-Ptr-Bond/cpanfile
+! Couldn't find module or a distribution Mojolicious::Lite (9.27)
+! Installing the dependencies failed: Module 'Mojolicious::Lite' is not installed
+! Bailing out the installation for /home/paul.webster/personal/ptr.bond/Author-Daemon-Site-Ptr-Bond/.
+Installing modules failed
+```
+* Ut oh, err hmmm... so what I did was remove the version requirement '9.27' in the cpanfile, the result was:
+```
+$ cat cpanfile
+requires 'Mojolicious::Lite';
+$ carton install
+Installing modules using /home/paul.webster/personal/ptr.bond/Author-Daemon-Site-Ptr-Bond/cpanfile
+Successfully installed Mojolicious-9.27
+1 distribution installed
+Complete! Modules were installed into /home/paul.webster/personal/ptr.bond/Author-Daemon-Site-Ptr-Bond/local
+```
+* Installing version 9.27, this is unusual I wonder what the issue is, (looks at pod/Carton)
+  * Ok so this is some weird perl versioning thing; I have no idea why I will have to ask some people, but what I did to correct the problem is change my cpanfile to be: "requires 'Mojolicious','== 9.27'"
+  * Next problem! I notice in git status that local/ is listed, which we added to .gitignore earlier, however we added it as /local, we are in a subdirectory effectively so ... time for a modification to .gitignore!
+    * I modified the entry for local to be '*/local' and commited the gitignore (657be57)
+  * Now when we run 'carton install', Complete! Modules were installed into /home/paul.webster/personal/ptr.bond/Author-Daemon-Site-Ptr-Bond/local -- Perfect!
+  * So finally we can commit our cpanfile and cpanfile.snapshot
+    * git add cpanfile* && git commit -m "initial carton enviroment created"
