@@ -43,6 +43,9 @@ I will expect this list to grow as the project progresses.
 * open readme.md in vscode and begin writing
 * mkdir -p assets/blog
 * take a picture of the enviroment so far 
-  * ![step1-1](assets/blog/step1-1.png "step1-1")
-  * ![step1-2](assets/blog/step1-2.png "step1-2")
-  * 
+  * [step1-1](assets/blog/step1-1.png "step1-1")
+* take a picture showing the integration of linux and windows via WSL2, take note of the linux icon in the bottom left of the explorer window which allows direct access to the linux file system for copying files to and from it.
+  * [step1-2](assets/blog/step1-2.png "step1-2")
+* Commit changes 988e73c
+  * Decide that the images are to large to stick in the flow of text and convert them into standard clickable links
+  * re-commit 
