@@ -1,19 +1,14 @@
 # What is this?
 
-My attempt to create a basic website for the domain ptr.bond using perl's 
-mojolicious.
+My attempt to create a basic website for the domain ptr.bond using perl's mojolicious.
 
 In a blog like style I am going to write down my experiences
 
 ## Infrastructure
 
-My local machine is running Windows 11, using the WSL2 stack and Docker Desktop 
-integration, the deployment target is [FreeBSD](https://www.freebsd.org) 13.1 
-hosted on [OVH](https://ovh.co.uk).
+My local machine is running Windows 11, using the WSL2 stack and Docker Desktop integration, the deployment target is [FreeBSD](https://www.freebsd.org) 13.1 hosted on [OVH](https://ovh.co.uk).
 
-Before I upgraded to windows 11 I worked on Windows 10, which required enabling
-WSL2, I used the following 
-[guide](https://www.windowscentral.com/how-install-wsl2-windows-10)
+Before I upgraded to windows 11 I worked on Windows 10, which required enabling WSL2, I used the following [guide](https://www.windowscentral.com/how-install-wsl2-windows-10)
 
 ## Technologies used
 I will expect this list to grow as the project progresses.
@@ -69,4 +64,13 @@ To github.com:PaulGWebster/ptr.bond.git
  * [new branch]      master -> master
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 ```
-* 
+* Create a new distribution (this blog does not include a howto on getting setup with dzil, however the site linked for DistZilla contains a tutorial)
+  * dzil new Author::Daemon::Site::Ptr::Bond and commit (c0a4ef8)
+```
+[DZ] making target dir /home/paul.webster/personal/ptr.bond/Author-Daemon-Site-Ptr-Bond
+[DZ] writing files to /home/paul.webster/personal/ptr.bond/Author-Daemon-Site-Ptr-Bond
+[DZ] dist minted in ./Author-Daemon-Site-Ptr-Bond
+```
+
+* Adjusted order of some of the blog to work better with markdown.
+  * commit ()
