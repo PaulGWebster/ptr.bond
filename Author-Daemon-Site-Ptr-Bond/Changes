@@ -1,6 +1,9 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+    - Experimental null bump to test BumpVersionAfterRelease::transitional
+
+0.004     2022-10-10 02:26:07+01:00 Europe/London
     - Experimental null bump to test BumpVersionAfterRelease
 
 0.003     2022-10-10 02:15:00+01:00 Europe/London
