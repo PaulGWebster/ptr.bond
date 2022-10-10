@@ -215,3 +215,6 @@ Even though we will be putting he entire system in docker eventually, we should 
 
 * Syncing document due to refactor (commit: 53a8327)
 * Syncing document due to refactor (commit: a8ff25d)
+* Syncing document due to more dzil work, have one that works now! thank you Grinnz (commit: bb6077e)
+
+
