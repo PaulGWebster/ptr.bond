@@ -1,3 +1,4 @@
 # Ignore our built author resources
 Author-Daemon-Site-Ptr-Bond*
-
+# Carton local inside a first level subdirectory
+local
