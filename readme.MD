@@ -244,3 +244,5 @@ $ ./site-ptr-bond get -M PUT -c '{"message":"Hello Mojo!"}' /reverse
   * Commit: 72aa16b
 * Added /notindex (index) and /hello template based calls
   * Commit: ec95685
+*  Added /secret /with_block and /with_layout examples! 
+   *  Commit: ea2bc36
