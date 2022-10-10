@@ -1,6 +1,9 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+    - Experimental null bump to test BumpVersionAfterRelease
+
+0.003     2022-10-10 02:15:00+01:00 Europe/London
     - Experimental push to see if git::nextversion was colliding with nextrelease
 
 0.002     2022-10-10 01:51:36+01:00 Europe/London
