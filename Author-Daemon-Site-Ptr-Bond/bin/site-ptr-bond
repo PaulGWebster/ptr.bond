@@ -17,7 +17,15 @@ use Carp qw(cluck longmess shortmess);
 # Private remote
 
 # Community
+use Mojolicious::Lite -signatures;
 
-say STDERR "Site launch!";
+# Route with placeholder
+get '/:foo' => sub ($c) {
+    my $foo = $c->param('foo');
+    $c->render( text => "Hello from $foo." );
+};
+
+# Start the Mojolicious command system
+app->start;
 
 exit 0;
