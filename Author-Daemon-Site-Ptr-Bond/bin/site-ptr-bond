@@ -140,6 +140,11 @@ get '/<:bar>something/foo' => sub ($c) {
 # /hello/test.html
 get '/hello/#you' => 'groovy';
 
+# /wildcard/test
+# /wildcard/test123
+# /wildcard/test.123/test/123
+get '/wildcard/*you' => 'groovy';
+
 # Start the Mojolicious command system
 app->start;
 
