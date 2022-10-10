@@ -214,3 +214,4 @@ Well we do have a site up, and a reasonable dist.ini (mostly); this section was 
 Even though we will be putting he entire system in docker eventually, we should get the basics working first; notable putting our handlers and such within the module we created.
 
 * Syncing document due to refactor (commit: 53a8327)
+* Syncing document due to refactor (commit: a8ff25d)
