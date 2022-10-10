@@ -1,6 +1,9 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+    - Experimental null bump to test @Git::VersionManager
+
+0.005     2022-10-10 02:40:51+01:00 Europe/London
     - Experimental null bump to test BumpVersionAfterRelease::transitional
 
 0.004     2022-10-10 02:26:07+01:00 Europe/London
