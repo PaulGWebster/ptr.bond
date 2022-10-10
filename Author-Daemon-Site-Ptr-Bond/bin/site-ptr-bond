@@ -167,6 +167,13 @@ any '/methods/whatever' => sub ($c) {
     $c->render( 'text' => "You called /methods/whatever with $method." );
 };
 
+# /hello
+# /hello/Sara
+get '/opt_placeholder/:name' => { 'name' => 'Sebastian', 'day' => 'Monday' } =>
+  sub ($c) {
+    $c->render( 'template' => 'opt_placeholder', 'format' => 'txt' );
+  };
+
 # Start the Mojolicious command system
 app->start;
 
@@ -215,3 +222,6 @@ We know who you are <%= whois %>.
 
 @@ groovy.html.ep
 Your name is <%= $you %>
+
+@@ opt_placeholder.txt.ep
+My name is <%= $name %> and it is <%= $day %>.
