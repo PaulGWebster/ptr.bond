@@ -148,7 +148,7 @@ Complete! Modules were installed into /home/paul.webster/personal/ptr.bond/Autho
   * So finally we can commit our cpanfile and cpanfile.snapshot
     * git add cpanfile* && git commit -m "initial carton enviroment created"
 * Commit readme.md (0b2c25c)
-## Step 5 - The first steps (Mojolicious)
+## Step 5 - The first steps (Mojolicious+more dzil)
 
 * We need to begin by copying the synopsis on the POD of [Mojolicious::Lite](https://metacpan.org/pod/Mojolicious::Lite)
 * This will not suite our default dzil module layout, so we will need to modify it a 'little'.
@@ -213,4 +213,4 @@ Well we do have a site up, and a reasonable dist.ini (mostly); this section was 
 
 Even though we will be putting he entire system in docker eventually, we should get the basics working first; notable putting our handlers and such within the module we created.
 
-* Syncing document due to refactor (commit: )
+* Syncing document due to refactor (commit: 53a8327)
