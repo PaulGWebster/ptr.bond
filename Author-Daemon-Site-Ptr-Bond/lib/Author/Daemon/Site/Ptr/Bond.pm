@@ -8,7 +8,7 @@ use experimental "signatures";
 
 # ABSTRACT: turns baubles into trinkets
 # Version
-our $VERSION = '0.006';
+our $VERSION = '0.008';
 
 # Perl bundled
 use Carp qw(cluck longmess shortmess);
