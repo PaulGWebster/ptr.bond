@@ -253,4 +253,7 @@ $ ./site-ptr-bond get -M PUT -c '{"message":"Hello Mojo!"}' /reverse
    *  Commit: bbd452f
 * Implemented Config plugin with associated config file, [Plugins](https://docs.mojolicious.org/Mojolicious/Guides/Tutorial#Plugins)
   * Commit: d94131a
-*  
+* Implemented placeholders example and tested, [Placeholders](https://docs.mojolicious.org/Mojolicious/Guides/Tutorial#Placeholders)
+  * Commit: 69fc86a
+* Implemented relaxed placeholders example and tested [Relaxed placeholders](https://docs.mojolicious.org/Mojolicious/Guides/Tutorial#Relaxed-Placeholders)
+  * Commit: 

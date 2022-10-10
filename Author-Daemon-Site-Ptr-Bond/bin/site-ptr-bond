@@ -136,6 +136,10 @@ get '/<:bar>something/foo' => sub ($c) {
     $c->render( 'text' => "Our :bar placeholder matched $bar" );
 };
 
+# /hello/test
+# /hello/test.html
+get '/hello/#you' => 'groovy';
+
 # Start the Mojolicious command system
 app->start;
 
@@ -181,3 +185,6 @@ Hello World!
 
 @@ secret.html.ep
 We know who you are <%= whois %>.
+
+@@ groovy.html.ep
+Your name is <%= $you %>
