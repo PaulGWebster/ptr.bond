@@ -64,7 +64,6 @@ get '/echo' => sub ($c) {
 
 # Route with JSON rendering
 # Modify the received JSON document and return it
-#
 put '/reverse' => sub ($c) {
     my $hash = $c->req->json;
     $hash->{message} = reverse $hash->{message};
@@ -76,6 +75,14 @@ get '/stash' => sub ($c) {
     $c->stash( 'one' => 23 );
     $c->render( 'template' => 'magic', 'two' => 24 );
 };
+
+# Not found (404) - Example exception
+get '/missing' => sub ($c) {
+    $c->render( template => 'does_not_exist' );
+};
+
+# Exception (500) - Example exception
+get '/dies' => sub { die 'Intentional error' };
 
 # Start the Mojolicious command system
 app->start;
