@@ -257,7 +257,11 @@ $ ./site-ptr-bond get -M PUT -c '{"message":"Hello Mojo!"}' /reverse
   * Commit: 69fc86a
 * Implemented relaxed placeholders example and tested [Relaxed placeholders](https://docs.mojolicious.org/Mojolicious/Guides/Tutorial#Relaxed-Placeholders)
   * Commit: e9d3d31
-* Implemented greedy 'wildcard' placeholders .* style
+* Implemented greedy 'wildcard' placeholders .* style, [Wildcard matches](https://docs.mojolicious.org/Mojolicious/Guides/Tutorial#Wildcard-placeholders)
   * Commit: ec5f65b
 * Commit step5-2 image (that got forgotten way earlier), 054c099
-* 
+* Implemented the HTTP Method examples under a sub uri of 'methods', [HTTP Methods](https://docs.mojolicious.org/Mojolicious/Guides/Tutorial#HTTP-methods)
+  * Commit: 8109125
+* Implemented the optional Placeholder example and tested, [Optional Placeholders](https://docs.mojolicious.org/Mojolicious/Guides/Tutorial#Optional-placeholders)
+  * Commit: 5d1e93d
+* Coming soon: https://docs.mojolicious.org/Mojolicious/Guides/Tutorial#Restrictive-placeholders
