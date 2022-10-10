@@ -27,6 +27,14 @@ get '/' => sub ($c) {
     $c->render( text => 'Hello World!' );
 };
 
+# Render the template "index.html.ep"
+get '/notindex' => sub ($c) {
+    $c->render;
+} => 'index';
+
+# Render the template "hello.html.ep"
+get '/hello';
+
 # Route with parameter
 get '/param' => sub ($c) {
     my $user = $c->param('user');
@@ -93,3 +101,10 @@ __DATA__
 
 @@ magic.html.ep
 The magic numbers are <%= $one %> and <%= $two %>.
+
+@@ index.html.ep
+<%= link_to Hello  => 'hello' %>.
+<%= link_to Reload => 'index' %>.
+
+@@ hello.html.ep
+Hello World!
