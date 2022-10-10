@@ -7,7 +7,7 @@ use warnings;
 use experimental "signatures";
 
 # Version
-our $VERSION = '0.01';
+our $VERSION = '0.009';
 
 # Perl bundled
 use Carp qw(cluck longmess shortmess);
