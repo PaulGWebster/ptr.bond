@@ -26,8 +26,8 @@ get '/' => sub ($c) {
     $c->render( text => 'Hello World!' );
 };
 
-# Route with placeholder
-get '/foo' => sub ($c) {
+# Route with parameter
+get '/param' => sub ($c) {
     my $user = $c->param('user');
     if ( !$user ) {
         $c->render( text => "Hello anonymous." );
@@ -36,7 +36,18 @@ get '/foo' => sub ($c) {
     $c->render( text => "Hello $user." );
 };
 
+# Route with stash
+get '/stash' => sub ($c) {
+    $c->stash( 'one' => 23 );
+    $c->render( 'template' => 'magic', 'two' => 24 );
+};
+
 # Start the Mojolicious command system
 app->start;
 
 exit 0;
+
+__DATA__
+
+@@ magic.html.ep
+The magic numbers are <%= $one %> and <%= $two %>.
