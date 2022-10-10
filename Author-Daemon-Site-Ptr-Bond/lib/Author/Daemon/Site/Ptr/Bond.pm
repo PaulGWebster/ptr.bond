@@ -12,6 +12,7 @@ our $VERSION = '0.01';
 
 # Perl bundled
 use Carp qw(cluck longmess shortmess);
+use Data::Dumper;
 
 # Private local
 
