@@ -145,6 +145,28 @@ get '/hello/#you' => 'groovy';
 # /wildcard/test.123/test/123
 get '/wildcard/*you' => 'groovy';
 
+# GET /methods/hello
+get '/methods/hello' => sub ($c) {
+    $c->render( 'text' => 'Hello World!' );
+};
+
+# PUT /methods/hello
+put '/methods/hello' => sub ($c) {
+    my $size = length $c->req->body;
+    $c->render( 'text' => "You uploaded $size bytes to /hello." );
+};
+
+# GET|POST|PATCH /methods/bye
+any [ 'GET', 'POST', 'PATCH' ] => '/methods/bye' => sub ($c) {
+    $c->render( 'text' => 'Bye World!' );
+};
+
+# * /methods/whatever
+any '/methods/whatever' => sub ($c) {
+    my $method = $c->req->method;
+    $c->render( 'text' => "You called /methods/whatever with $method." );
+};
+
 # Start the Mojolicious command system
 app->start;
 
