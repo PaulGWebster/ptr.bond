@@ -21,6 +21,11 @@ use Carp qw(cluck longmess shortmess);
 # Community
 use Mojolicious::Lite -signatures;
 
+# Route a static index page
+get '/' => sub ($c) {
+    $c->render( text => 'Hello World!' );
+};
+
 # Route with placeholder
 get '/:foo' => sub ($c) {
     my $foo = $c->param('foo');
