@@ -26,7 +26,7 @@ I will expect this list to grow as the project progresses.
   * Frameworks
     * Mojolicious [Web development can be fun again](https://mojolicious.org)
 
-## Step 1 - initializing 
+## Step 1 - initializing (git)
 
 * Start VSCode, connect to debian/WSL2 instance.
 * Choose folder ~/
@@ -46,6 +46,8 @@ I will expect this list to grow as the project progresses.
   * Re-commit (ac678f0)
 * Correct what has been written so far and add appropriate capitalisation
   * Commit (875bc4b)
+
+## Step 2 - Adding remote source repository (github)
 * Create a new project/repository on github [github - ptr.bond](https://github.com/PaulGWebster/ptr.bond)
   * Add a remote to the currently local only git repository and make the first push.
     * git remote add origin git@github.com:PaulGWebster/ptr.bond.git
@@ -64,6 +66,8 @@ To github.com:PaulGWebster/ptr.bond.git
  * [new branch]      master -> master
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 ```
+
+## Step 3 - Creating a perl module (Dist::Zilla)
 * Create a new distribution (this blog does not include a howto on getting setup with dzil, however the site linked for DistZilla contains a tutorial)
   * dzil new Author::Daemon::Site::Ptr::Bond and commit (c0a4ef8)
 ```
@@ -74,6 +78,8 @@ Branch 'master' set up to track remote branch 'master' from 'origin'.
 
 * Adjusted order of some of the blog to work better with markdown.
   * commit (983f60e)
+
+## step 4 - Initilize local source freezing (Carton)
 * Change to the module directory: cd Author-Daemon-Site-Ptr-Bond
 * Cast an eye at [Mojolicious - Tutorial](https://docs.mojolicious.org/Mojolicious/Guides/Tutorial)
   * Run cpanm Mojolicious::Lite, noting the version installed 
@@ -141,3 +147,8 @@ Complete! Modules were installed into /home/paul.webster/personal/ptr.bond/Autho
   * Now when we run 'carton install', Complete! Modules were installed into /home/paul.webster/personal/ptr.bond/Author-Daemon-Site-Ptr-Bond/local -- Perfect!
   * So finally we can commit our cpanfile and cpanfile.snapshot
     * git add cpanfile* && git commit -m "initial carton enviroment created"
+* Commit readme.md (0b2c25c)
+## Step 5 - The first steps (Mojolicious)
+
+* We need to begin by copying the example on the POD of [Mojolicious::Lite](https://metacpan.org/pod/Mojolicious::Lite)
+* This will not suite our default dzil module layout, so we will need to modify it a little 
