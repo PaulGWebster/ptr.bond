@@ -169,3 +169,49 @@ Complete! Modules were installed into /home/paul.webster/personal/ptr.bond/Autho
 [Git::Commit] Committed Changes dist.ini
 ```
 * Removing [NextRelease] as it seems to be colliding with Git::NextVersion, doing a second release to check version bumping is happening. This will take some testing.. 
+* Well this will be a big post, I had to modify quite a bit ... so lets start with the immediate problem after all that testing. 
+  * Problem 1
+```
+?? Author-Daemon-Site-Ptr-Bond-0.001.tar.gz
+?? Author-Daemon-Site-Ptr-Bond-0.001/
+?? Author-Daemon-Site-Ptr-Bond-0.002.tar.gz
+?? Author-Daemon-Site-Ptr-Bond-0.002/
+?? Author-Daemon-Site-Ptr-Bond-0.003.tar.gz
+?? Author-Daemon-Site-Ptr-Bond-0.003/
+?? Author-Daemon-Site-Ptr-Bond-0.004.tar.gz
+?? Author-Daemon-Site-Ptr-Bond-0.004/
+```
+* -
+  * So I think we need a new .gitignore, this time in our module directory:
+```
+Author-Daemon-Site-Ptr-Bond$ cat .gitignore 
+# Ignore our built author resources
+Author-Daemon-Site-Ptr-Bond*
+Author-Daemon-Site-Ptr-Bond$ git status
+Author-Daemon-Site-Ptr-Bond$ git status
+## master...origin/master [ahead 1]
+ M Changes
+ M bin/site-ptr-bond
+ M lib/Author/Daemon/Site/Ptr/Bond.pm
+ M ../readme.MD
+```
+Looks better to me, I think I need to stop using bullet points...
+
+Though that does bring up the question about any ignores in the parent directory that really belong in here ... there is at least one let me move that across to where it belongs. (commit: 1078977)
+
+Now the other files, we have our dist.ini sorted so that it will not only add tags for our version but also bump out $VERSION's in source files, you can see the magic in dist.ini ... but wait at the moment that bump in version will mean that every single file will need commiting again because of the change ... gah one moment. (commit: 17e1c40)
+
+Ok I do not have a solution for that right now :( but its not all to bad, if I had 100s of source files it sure would be though! So let me get all these files commited so I have a nice clean place to start from. (commit: 1730b77, 997faa0, b130e28) - Also added an additional ignore for '.build' and tidied up dist.ini
+
+Well we do have a site up, and a reasonable dist.ini (mostly); this section was meant to be about mojolicious but seems to have turned into a dzil configuring spree, so without further a-do
+
+## Step 6 The second steps (mojolicious)
+
+Even though we will be putting he entier system in docker eventually, we should get the basics working first; notable putting our handlers and such within the module we created.
+
+
+
+
+
+
+
