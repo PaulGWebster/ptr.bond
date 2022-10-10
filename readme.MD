@@ -203,15 +203,14 @@ Now the other files, we have our dist.ini sorted so that it will not only add ta
 
 Ok I do not have a solution for that right now :( but its not all to bad, if I had 100s of source files it sure would be though! So let me get all these files commited so I have a nice clean place to start from. (commit: 1730b77, 997faa0, b130e28) - Also added an additional ignore for '.build' and tidied up dist.ini
 
+* Commit readme.md (b6ea703)
+
+Next we should tell dzil(sorry! just something I spoted) that the main module is actually bin/site-otr-bond which is the executable to launch the actual site. (commit: 71474e2), also in this commit I found out that the issue I had earlier with MakeMaker refusing to read our cpanfile can be fixed by simply specifying as the error states 'eumm_version = 7.1101' for MakeMaker -_- (I presumed it would always use the latest version)
+
 Well we do have a site up, and a reasonable dist.ini (mostly); this section was meant to be about mojolicious but seems to have turned into a dzil configuring spree, so without further a-do
 
 ## Step 6 The second steps (mojolicious)
 
-Even though we will be putting he entier system in docker eventually, we should get the basics working first; notable putting our handlers and such within the module we created.
+Even though we will be putting he entire system in docker eventually, we should get the basics working first; notable putting our handlers and such within the module we created.
 
-
-
-
-
-
-
+* Syncing document due to refactor (commit: )
