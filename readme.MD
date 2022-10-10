@@ -168,4 +168,4 @@ Complete! Modules were installed into /home/paul.webster/personal/ptr.bond/Autho
 [Git::Commit] WARNING: No changes listed under 0.001 in Changes
 [Git::Commit] Committed Changes dist.ini
 ```
-* Removing [NextRelease] as it seems to be colliding with Git::NextVersion, doing a second release to check version bumping is happening.
+* Removing [NextRelease] as it seems to be colliding with Git::NextVersion, doing a second release to check version bumping is happening. This will take some testing.. 
