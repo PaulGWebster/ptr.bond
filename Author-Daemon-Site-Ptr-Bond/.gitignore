@@ -2,3 +2,6 @@
 Author-Daemon-Site-Ptr-Bond*
 # Carton local inside a first level subdirectory
 local
+# Do not include the build directory
+.build
+
