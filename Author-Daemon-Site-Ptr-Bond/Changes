@@ -1,6 +1,6 @@
-Revision history for {{$dist->name}}
+Revision history for Author-Daemon-Site-Ptr-Bond
 
-{{$NEXT}}
+0.006     2022-10-10 21:12:40+01:00 Europe/London
     - Experimental null bump to test @Git::VersionManager
 
 0.005     2022-10-10 02:40:51+01:00 Europe/London
