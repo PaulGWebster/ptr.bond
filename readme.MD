@@ -162,4 +162,10 @@ Complete! Modules were installed into /home/paul.webster/personal/ptr.bond/Autho
   * time to start using the modules we made.
 * Commited readme.md (commit: ad16968)
 * Made the first release to test dist.ini layout, updated Changes
-* Commit all: 
+* Commit all: df97ea6
+* First push/release: 
+```
+[Git::Commit] WARNING: No changes listed under 0.001 in Changes
+[Git::Commit] Committed Changes dist.ini
+```
+* Removing [NextRelease] as it seems to be colliding with Git::NextVersion, doing a second release to check version bumping is happening.

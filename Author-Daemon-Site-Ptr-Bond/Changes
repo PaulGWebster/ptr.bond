@@ -1,5 +1,10 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+    - Experimental push to see if git::nextversion was colliding with nextrelease
 
 0.001     2022-10-10 01:51:36+01:00 Europe/London
+    - Added basic bin following Mojo::lite's synopsis
+    - Tidied up Bond.pm for addition later
+    - Added in blog in readme.md
+
