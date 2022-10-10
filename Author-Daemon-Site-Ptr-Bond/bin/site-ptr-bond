@@ -62,6 +62,15 @@ get '/echo' => sub ($c) {
     $c->render( 'text' => $response );
 };
 
+# Route with JSON rendering
+# Modify the received JSON document and return it
+#
+put '/reverse' => sub ($c) {
+    my $hash = $c->req->json;
+    $hash->{message} = reverse $hash->{message};
+    $c->render( json => $hash );
+};
+
 # Route with stash
 get '/stash' => sub ($c) {
     $c->stash( 'one' => 23 );
