@@ -13,6 +13,7 @@ our $VERSION = '0.009';
 
 # Perl bundled
 use Carp qw(cluck longmess shortmess);
+use Data::Dumper;
 
 # Private local
 
@@ -34,6 +35,31 @@ get '/param' => sub ($c) {
         return;
     }
     $c->render( text => "Hello $user." );
+};
+
+# Access request information
+get '/agent' => sub ($c) {
+    my $host = $c->req->url->to_abs->host;
+    my $ua   = $c->req->headers->user_agent;
+    $c->render( text => "Request by $ua reached $host." );
+};
+
+# Echo the request body and send custom header with response
+get '/echo' => sub ($c) {
+    my $headers = $c->req->headers->to_hash;
+
+    my $response =
+      '<table><thead><tr><th>Key</th><th>Value</th></tr></thead><tbody>';
+    foreach my $request_key ( keys %{$headers} ) {
+        $response .= "</tr>";
+        $response .= "<td>$request_key</td>";
+        $response .= "<td>$headers->{$request_key}" . "</td>";
+        $response .= "</tr>";
+    }
+    $response .= '</tbody></table>';
+
+    #$c->res->headers->header( 'X-Bender' => 'Bite my shiny metal ass!' );
+    $c->render( 'text' => $response );
 };
 
 # Route with stash

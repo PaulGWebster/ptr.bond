@@ -217,4 +217,17 @@ Even though we will be putting he entire system in docker eventually, we should 
 * Syncing document due to refactor (commit: a8ff25d)
 * Syncing document due to more dzil work, have one that works now! thank you Grinnz (commit: bb6077e)
 
+* Implement the first stage of the [tutorial](https://docs.mojolicious.org/Mojolicious/Guides/Tutorial#Hello-World) and execute a daemon to test: 
+  * $ bin/site-ptr-bond daemon
 
+    [2022-10-10 22:17:18.07842] [12093] [info] Listening at "http://*:3000"
+  * and view the results on a web browser: [step6-1](assets/blog/step6-1.png "step6-1")
+  * Commit: 2a2d630
+* Modified out /foo handler to accept a 'user' parameter and deal with the case it is null or not presented.
+  * commit: 371cf8e
+* Added a basic stash and template based route and correct /foo to be /param
+  * Commit: 2c250ca
+* Added:
+  * An example of extracting the UserAgent and sending it back to the browser /agent and grabbed a screenshot: [step6-2](assets/blog/step1-2.png "step1-2")
+  * An echo handler that simply responds with the request that was sent to it /echo, implemented in a 90s stlye table
+    * Commit: 
