@@ -111,6 +111,17 @@ get '/secret' => sub ($c) {
     $c->app->log->debug("Request from $user");
 };
 
+# Plugins!
+# Assuming we are in the working directory of the site script
+plugin Config => { file => '../etc/site.conf', default => { 'foox' => 'bar' } };
+
+# Return configured foo value, or default if no configuration file
+get '/config' => sub ($c) {
+    my $foo  = $c->app->config('foo');
+    my $foox = $c->app->config('foox');
+    $c->render( 'json' => { 'foo' => $foo, 'foox' => $foox } );
+};
+
 # Start the Mojolicious command system
 app->start;
 

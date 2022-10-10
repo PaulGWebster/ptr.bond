@@ -246,3 +246,6 @@ $ ./site-ptr-bond get -M PUT -c '{"message":"Hello Mojo!"}' /reverse
   * Commit: ec95685
 *  Added /secret /with_block and /with_layout examples! 
    *  Commit: ea2bc36
+*  Correct /secret and added an inline template for it.
+   *  Commit: bbd452f
+*  
