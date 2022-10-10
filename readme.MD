@@ -230,4 +230,17 @@ Even though we will be putting he entire system in docker eventually, we should 
 * Added:
   * An example of extracting the UserAgent and sending it back to the browser /agent and grabbed a screenshot: [step6-2](assets/blog/step1-2.png "step1-2")
   * An echo handler that simply responds with the request that was sent to it /echo, implemented in a 90s stlye table
-    * Commit: 
+    * Commit: 60a47d2
+* Implemented a JSON based PUT handler that reverses text send to it:
+```
+$ ./site-ptr-bond get -M PUT -c '{"message":"Hello Mojo!"}' /reverse
+[2022-10-10 23:25:48.05693] [21728] [trace] [g4a3vFzsJsZs] PUT "/reverse"
+[2022-10-10 23:25:48.05718] [21728] [trace] [g4a3vFzsJsZs] Routing to a callback
+[2022-10-10 23:25:48.05734] [21728] [trace] [g4a3vFzsJsZs] 200 OK (0.000405s, 2469.136/s)
+{"message":"!ojoM olleH"}
+```
+  * Commit: 4a8f56a
+* Implemented /dies and /missing as an example of exception raising within mojolicious
+  * Commit: 72aa16b
+* Added /notindex (index) and /hello template based calls
+  * Commit: ec95685

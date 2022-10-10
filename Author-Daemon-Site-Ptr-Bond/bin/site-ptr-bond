@@ -92,6 +92,26 @@ get '/missing' => sub ($c) {
 # Exception (500) - Example exception
 get '/dies' => sub { die 'Intentional error' };
 
+# Use layouts (see: with_layout.html.ep in the __DATA__ section)
+get '/with_layout';
+
+# Use a perl block in a template (See: with_block in the data section)
+get '/with_block' => 'block';
+
+# A helper to identify visitors
+helper whois => sub ($c) {
+    my $agent = $c->req->headers->user_agent || 'Anonymous';
+    my $ip    = $c->tx->remote_address;
+    return "$agent ($ip)";
+};
+
+# Use helper in action and template
+get '/secret' => sub ($c) {
+    my $user = $c->whois;
+    $c->app->log->debug("Request from $user");
+    $c->render( 'text' => "Hello: $user" );
+};
+
 # Start the Mojolicious command system
 app->start;
 
@@ -108,3 +128,29 @@ The magic numbers are <%= $one %> and <%= $two %>.
 
 @@ hello.html.ep
 Hello World!
+
+@@ with_layout.html.ep
+% title 'Green';
+% layout 'green';
+Hello World!
+
+@@ layouts/green.html.ep
+<!DOCTYPE html>
+<html>
+  <head><title><%= title %></title></head>
+  <body style="background-color:<%= title %>"><%= content %></body>
+</html>
+
+@@ block.html.ep
+% my $link = begin
+  % my ($url, $name) = @_;
+  Try <%= link_to $url => begin %><%= $name %><% end %>.
+% end
+<!DOCTYPE html>
+<html>
+  <head><title>Sebastians frameworks</title></head>
+  <body>
+    %= $link->('http://mojolicious.org', 'Mojolicious')
+    %= $link->('http://mojojs.org', 'mojo.js')
+  </body>
+</html>
