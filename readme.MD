@@ -223,15 +223,15 @@ Even though we will be putting he entire system in docker eventually, we should 
     [2022-10-10 22:17:18.07842] [12093] [info] Listening at "http://*:3000"
   * and view the results on a web browser: [step6-1](assets/blog/step6-1.png "step6-1")
   * Commit: 2a2d630
-* Modified out /foo handler to accept a 'user' parameter and deal with the case it is null or not presented.
+* Modified out /foo handler to accept a 'user' parameter and deal with the case it is null or not presented, [Params](https://docs.mojolicious.org/Mojolicious/Guides/Tutorial#GET-POST-parameters)
   * commit: 371cf8e
-* Added a basic stash and template based route and correct /foo to be /param
+* Added a basic stash and template based route and correct /foo to be /param, [Stash](https://docs.mojolicious.org/Mojolicious/Guides/Tutorial#Stash-and-templates):
   * Commit: 2c250ca
 * Added:
   * An example of extracting the UserAgent and sending it back to the browser /agent and grabbed a screenshot: [step6-2](assets/blog/step1-2.png "step1-2")
-  * An echo handler that simply responds with the request that was sent to it /echo, implemented in a 90s stlye table
+  * An echo handler that simply responds with the request that was sent to it /echo, implemented in a 90s stlye table; [HTTP Echo](https://docs.mojolicious.org/Mojolicious/Guides/Tutorial#HTTP):
     * Commit: 60a47d2
-* Implemented a JSON based PUT handler that reverses text send to it:
+* Implemented a JSON based PUT handler that reverses text send to it, [JSON Reverse](https://docs.mojolicious.org/Mojolicious/Guides/Tutorial#JSON):
 ```
 $ ./site-ptr-bond get -M PUT -c '{"message":"Hello Mojo!"}' /reverse
 [2022-10-10 23:25:48.05693] [21728] [trace] [g4a3vFzsJsZs] PUT "/reverse"
@@ -240,12 +240,17 @@ $ ./site-ptr-bond get -M PUT -c '{"message":"Hello Mojo!"}' /reverse
 {"message":"!ojoM olleH"}
 ```
   * Commit: 4a8f56a
-* Implemented /dies and /missing as an example of exception raising within mojolicious
+* Implemented /dies and /missing as an example of exception raising within mojolicious, [Exceptions](https://docs.mojolicious.org/Mojolicious/Guides/Tutorial#Built-in-exception-and-not_found-pages)
   * Commit: 72aa16b
-* Added /notindex (index) and /hello template based calls
+* Added /notindex (index) and /hello template based calls, [Route names](https://docs.mojolicious.org/Mojolicious/Guides/Tutorial#Route-names)
   * Commit: ec95685
 *  Added /secret /with_block and /with_layout examples! 
+   *  [Helpers](https://docs.mojolicious.org/Mojolicious/Guides/Tutorial#Helpers)
+   *  [Blocks](https://docs.mojolicious.org/Mojolicious/Guides/Tutorial#Blocks)
+   *  [Layouts](https://docs.mojolicious.org/Mojolicious/Guides/Tutorial#Layouts)
    *  Commit: ea2bc36
-*  Correct /secret and added an inline template for it.
+* Correct /secret and added an inline template for it. 
    *  Commit: bbd452f
+* Implemented Config plugin with associated config file, [Plugins](https://docs.mojolicious.org/Mojolicious/Guides/Tutorial#Plugins)
+  * Commit: d94131a
 *  

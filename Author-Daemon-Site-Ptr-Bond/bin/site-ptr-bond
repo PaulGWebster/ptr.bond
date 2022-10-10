@@ -122,6 +122,20 @@ get '/config' => sub ($c) {
     $c->render( 'json' => { 'foo' => $foo, 'foox' => $foox } );
 };
 
+# /foo/test
+# /foo/test123
+get '/placeholders/:bar' => sub ($c) {
+    my $bar = $c->stash('bar');
+    $c->render( 'text' => "Our :bar placeholder matched $bar" );
+};
+
+# /testsomething/foo
+# /test123something/foo
+get '/<:bar>something/foo' => sub ($c) {
+    my $bar = $c->param('bar');
+    $c->render( 'text' => "Our :bar placeholder matched $bar" );
+};
+
 # Start the Mojolicious command system
 app->start;
 
