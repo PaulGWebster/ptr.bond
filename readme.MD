@@ -150,5 +150,16 @@ Complete! Modules were installed into /home/paul.webster/personal/ptr.bond/Autho
 * Commit readme.md (0b2c25c)
 ## Step 5 - The first steps (Mojolicious)
 
-* We need to begin by copying the example on the POD of [Mojolicious::Lite](https://metacpan.org/pod/Mojolicious::Lite)
-* This will not suite our default dzil module layout, so we will need to modify it a little 
+* We need to begin by copying the synopsis on the POD of [Mojolicious::Lite](https://metacpan.org/pod/Mojolicious::Lite)
+* This will not suite our default dzil module layout, so we will need to modify it a 'little'.
+  * 5 minutes of dist.ini modification later, commit (01e6a91)
+  * 10 minutes later had to manually fix [Dist::Zilla::Plugin::Prereqs::FromCPANfile](https://github.com/PaulGWebster/Dist-Zilla-Plugin-Prereqs-FromCPANfile) - Bug reported, with hack that should not be merged
+* Added a bin directory bin/site-ptr-bond so we can start our site! (commit: cf21d2e)
+* Reduced Bond.pm to its basic skeleton for the time being, (commit: df97ea6)
+* Paste the synopsis of Mojolicious::Lite into bin/site-ptr-bond, (commit: 446e901)
+* We now have a working example by calling: bin/site-ptr-bond daemon yay!
+  * But we could have just done that with a single script!
+  * time to start using the modules we made.
+* Commited readme.md (commit: ad16968)
+* Made the first release to test dist.ini layout, updated Changes
+* Commit all: 
